@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Desktop.ogg-5f3c05de8ee68ba802cb6873fa891452.oggstr"
+
+[deps]
+
+source_file="res://assets/musics/Desktop.ogg"
+dest_files=[ "res://.import/Desktop.ogg-5f3c05de8ee68ba802cb6873fa891452.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
