@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Sona/Sona Idle.png" type="Texture" id=1]
+[ext_resource path="res://assets/Sona/Sona Run.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 20, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 60, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 40, 0, 20, 20 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "Run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 8, 5.17471 )
+
+[node name="AnimatedSprite" type="RigidBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 5 )
+animation = "Idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 2, 2 )
+shape = SubResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -64 )
+current = true

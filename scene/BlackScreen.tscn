@@ -1,0 +1,17 @@
+[gd_scene format=2]
+
+[node name="BlackScreen" type="Node2D"]
+z_index = 4096
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -1856.0
+margin_top = -1320.0
+margin_right = 3608.0
+margin_bottom = 2304.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/images/weeb/pixelUI/arrows-pixels.png" type="Texture" id=1]
+[ext_resource path="res://scripts/LeftArrow.gd" type="Script" id=2]
+[ext_resource path="res://scene/Good.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/Bad.tscn" type="PackedScene" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 34, 17, 17, 17 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2, 8 )
+
+[node name="UpArrow" type="Area2D"]
+position = Vector2( 0, 300 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -4.76837e-06, 3.33786e-06 )
+scale = Vector2( 0.941177, 0.977942 )
+texture = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Good" parent="." instance=ExtResource( 3 )]
+
+[node name="Bad" parent="." instance=ExtResource( 4 )]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
